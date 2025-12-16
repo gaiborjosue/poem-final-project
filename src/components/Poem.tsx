@@ -118,14 +118,15 @@ const PoemLine = ({
 export function Poem() {
   const [activeColors, setActiveColors] = useState<AuroraColors>(defaultColors)
   
-  // Custom images from public folder
+  // Custom images from public folder (using base URL for GitHub Pages)
+  const base = import.meta.env.BASE_URL
   const images = {
-    love: "/1.png",
-    skies: "/2.png",
-    iceland: "/3.png",
-    ecuador: "/4.png",
-    poland: "/5.png",
-    you: "/6.png",
+    love: `${base}1.png`,
+    skies: `${base}2.png`,
+    iceland: `${base}3.png`,
+    ecuador: `${base}4.png`,
+    poland: `${base}5.png`,
+    you: `${base}6.png`,
   }
 
   const handleHover = (scheme: keyof typeof colorSchemes) => {
